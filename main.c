@@ -6,7 +6,13 @@ int main(int argc, char* argv[]){
 
 	char install[43] = "sudo apt-get update && sudo apt-get upgrade";
 	char upOS[29] = " && sudo apt-get dist-upgrade";
-	int choice = 0; 
+	int os = 0, choice = 0; 
+
+
+	do{
+		printf("What kind of O.S. to upgrade ?\n 1) Debian\n2) Fedora\n");
+		scanf("%d", &os);
+	} while (os < 1 || os > 2);
 
 	system("clear");
 
