@@ -10,7 +10,6 @@ int main(int argc, char* argv[]){
 	char installFed[15] = "sudo dnf update";
 	char upOSFed[35] = " && sudo dnf install fedora-upgrade";
 	char cleanOSDeb[66] = "sudo apt-get autoremove && sudo apt-get autoclean && sudo updatedb";
-;
 	char cleanOSFed[58] = "sudo dnf autoremove && sudo dnf clean all && sudo updatedb";
 	int os = 0, choice = 0; 
 
