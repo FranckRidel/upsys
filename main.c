@@ -4,15 +4,34 @@
 
 int main(int argc, char* argv[]){
 
-	char install[43] = "sudo apt-get update && sudo apt-get upgrade";
-	char upOS[29] = " && sudo apt-get dist-upgrade";
+	char install[50] = "", upOS[40] = "", cleanOS[70] = "";
+	char installDeb[43] = "sudo apt-get update && sudo apt-get upgrade";
+	char upOSDeb[29] = " && sudo apt-get dist-upgrade";
+	char installFed[15] = "sudo dnf update";
+	char upOSFed[35] = " && sudo dnf install fedora-upgrade";
+	char cleanOSDeb[66] = "sudo apt-get autoremove && sudo apt-get autoclean && sudo updatedb";
+;
+	char cleanOSFed[58] = "sudo dnf autoremove && sudo dnf clean all && sudo updatedb";
 	int os = 0, choice = 0; 
 
-
+	system("clear");
+	
 	do{
-		printf("What kind of O.S. to upgrade ?\n 1) Debian\n2) Fedora\n");
+		printf("What kind of O.S. to upgrade ?\n1) Debian\n2) Fedora\n");
 		scanf("%d", &os);
 	} while (os < 1 || os > 2);
+
+	switch(os){
+		case 1: strcpy(install, installDeb);
+			strcpy(upOS, upOSDeb);
+			break;
+		case 2: strcpy(install, installFed);
+			strcpy(upOS, upOSFed);
+			break; 
+		default: printf("An error has occurred\n");
+		exit(0);
+	}
+
 
 	system("clear");
 
@@ -34,9 +53,9 @@ int main(int argc, char* argv[]){
 	
 	printf("\n\nUpdate OK. Cleaning system...\n\n");
 
-	system("sudo apt-get autoremove && sudo apt-get autoclean && sudo updatedb");
+	system(cleanOS);
 
-	printf("\n\nSystem cleaned./n See you soon !\n\n");
+	printf("\n\nSystem cleaned.\n See you soon !\n\n");
 
 	return 0;
 }
