@@ -1,2 +1,2 @@
 # upsys
-C script for upgrading and cleaning Debian programs and systems
+C script for upgrading and cleaning Debian or Fedora programs and systems
