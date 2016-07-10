@@ -5,12 +5,12 @@
 int main(int argc, char* argv[]){
 
 	char install[50] = "", upOS[40] = "", cleanOS[70] = "";
-	char installDeb[43] = "sudo apt-get update && sudo apt-get upgrade";
-	char upOSDeb[29] = " && sudo apt-get dist-upgrade";
-	char installFed[15] = "sudo dnf update";
-	char upOSFed[35] = " && sudo dnf install fedora-upgrade";
-	char cleanOSDeb[66] = "sudo apt-get autoremove && sudo apt-get autoclean && sudo updatedb";
-	char cleanOSFed[58] = "sudo dnf autoremove && sudo dnf clean all && sudo updatedb";
+	char installDeb[50] = "sudo apt-get update && sudo apt-get upgrade";
+	char upOSDeb[40] = " && sudo apt-get dist-upgrade";
+	char installFed[50] = "sudo dnf update";
+	char upOSFed[40] = " && sudo dnf install fedora-upgrade";
+	char cleanOSDeb[70] = "sudo apt-get autoremove && sudo apt-get autoclean && sudo updatedb";
+	char cleanOSFed[70] = "sudo dnf autoremove && sudo dnf clean all && sudo updatedb";
 	int os = 0, choice = 0; 
 
 	system("clear");
